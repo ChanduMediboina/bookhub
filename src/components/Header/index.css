@@ -1,0 +1,88 @@
+.header-page-container {
+  background-image: linear-gradient(
+    to left,
+    rgba(154, 253, 223, 0.699),
+    #e3fffb
+  );
+  border: 1px solid #e4e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-right: 20px;
+}
+.header-logo-img {
+  width: 133px;
+  height: 41px;
+  left: 150px;
+  top: 24px;
+  margin-left: 40px;
+}
+@media screen and (max-width: 767px) {
+  .header-logo-img {
+    margin-left: 15px;
+  }
+}
+
+.home-logout-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.drop-down-container {
+  display: none;
+}
+.hamburger-container {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .home-logout-container {
+    display: none;
+  }
+  .hamburger-container {
+    display: block;
+  }
+
+  .invisible-drop-down {
+    display: block;
+    padding-left: 20px;
+  }
+  .drop-down-container {
+    display: none;
+    padding-left: 20px;
+  }
+}
+.header-home-name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #64748b;
+  padding-right: 36px;
+}
+.header-home-name:hover {
+  color: rgb(0, 19, 128);
+}
+.logout-btn {
+  padding: 8px 16px;
+  gap: 8px;
+  width: 73px;
+  height: 32px;
+  background: #0284c7;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  margin-right: 40px;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .logout-btn {
+    background-color: transparent;
+    color: #64748b;
+    padding-left: 0px;
+  }
+}
+.link {
+  color: transparent;
+}

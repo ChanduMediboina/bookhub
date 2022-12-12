@@ -1,0 +1,119 @@
+.books-page-container {
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .books-page-container {
+    flex-direction: column;
+  }
+}
+.books-side-container {
+  background-color: #e5e5e5;
+  width: 100%;
+  padding: 20px;
+  padding-left: 50px;
+}
+@media screen and (max-width: 767px) {
+  .books-side-container {
+    padding-left: 10px;
+  }
+}
+.search-container {
+  width: 364px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 6px;
+  flex: 1;
+  border: none;
+  outline: none;
+}
+.search-btn {
+  width: 52px;
+  height: 34px;
+  background: #edeff1;
+  border-radius: 0px 3px 3px 0px;
+  border: none;
+}
+.search-icon {
+  width: 32px;
+  height: 20px;
+}
+.ul-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.all-books-heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  color: #334155;
+}
+.heading-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .heading-search-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .all-books-heading {
+    display: none;
+  }
+}
+.no-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.no-search-img {
+  width: 60%;
+}
+.no-search-content {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #334155;
+}
+.loading-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.failure-img {
+  width: 60%;
+  margin: 40px;
+}
+.try-again-btn {
+  padding: 12px 24px;
+  gap: 8px;
+  width: 112px;
+  height: 48px;
+  background: #0284c7;
+  border-radius: 12px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  color: #ffff;
+}

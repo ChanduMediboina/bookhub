@@ -1,0 +1,47 @@
+.not-found-container {
+  background-color: #ffff;
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-found-img {
+  background: rgba(249, 248, 248, 0.1);
+  width: 60%;
+}
+.not-found-heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 10px;
+  text-align: center;
+  color: #334155;
+}
+
+.not-found-para {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #475569;
+  width: 400px;
+}
+.go-back-btn {
+  padding: 12px 24px;
+  gap: 8px;
+  width: 164px;
+  height: 48px;
+  background: #0284c7;
+  border-radius: 12px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: none;
+  color: #ffff;
+  cursor: pointer;
+}

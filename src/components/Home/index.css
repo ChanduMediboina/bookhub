@@ -1,0 +1,106 @@
+.home-page-container {
+  min-height: 100vh;
+  padding: 30px;
+  background-image: url('https://res.cloudinary.com/dxnk6ejnn/image/upload/v1670680632/book-image2_pirvdo.jpg');
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .home-page-container {
+    padding: 10px;
+  }
+}
+.home-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 44px;
+  width: 70%;
+  color: #0a0a09;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.home-para {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 32px;
+  width: 80%;
+  color: #0b0c0a;
+  padding-left: 25px;
+}
+@media screen and (max-width: 767px) {
+  .home-heading {
+    font-size: 30px;
+    padding-top: 0px;
+    width: 90%;
+  }
+  .home-para {
+    width: 90%;
+  }
+}
+.top-rated-books-container {
+  background: #ffffff;
+  box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08),
+    0px 1px 2px rgba(96, 97, 112, 0.16);
+  border-radius: 16px;
+  margin: 20px;
+  margin-top: 50px;
+  padding: 30px;
+  padding-top: 10px;
+}
+@media screen and (max-width: 767px) {
+  .top-rated-books-container {
+    padding: 35px;
+    padding-top: 10px;
+  }
+}
+.top-rated-books-container:hover {
+  box-shadow: 0px 0px 7px 4px rgb(139, 139, 245);
+}
+.top-rating-find-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-rated-heading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #34f36d;
+}
+@media screen and (max-width: 767px) {
+  .top-rating-find-btn-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  .top-rated-heading {
+    line-height: 30px;
+    font-size: 20px;
+  }
+}
+.find-more-btn {
+  padding: 10px;
+  width: 104px;
+  height: 36px;
+  background: #0284c7;
+  border-radius: 4px;
+  order: 0;
+  flex-grow: 0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}

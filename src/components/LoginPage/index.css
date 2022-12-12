@@ -1,0 +1,124 @@
+.login-page-container {
+  display: flex;
+  min-height: 100vh;
+}
+@media screen and (max-width: 767px) {
+  .login-page-container {
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    padding-top: 30px;
+  }
+}
+.side-img {
+  width: 60%;
+  height: 100vh;
+}
+@media screen and (max-width: 767px) {
+  .side-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
+}
+.side-container {
+  background-color: #e5e5e5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .side-container {
+    background-color: #fff;
+  }
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #ffffff;
+  margin: 20px;
+  box-shadow: 0px 0px 20px 4px rgb(153, 151, 151);
+  border-radius: 10px;
+}
+@media screen and (max-width: 767px) {
+  .form-container {
+    box-shadow: none;
+    padding: 10px;
+  }
+}
+.logo-img {
+  width: 60%;
+  margin-bottom: 40px;
+}
+
+.login-label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 19px;
+  color: #5a7184;
+}
+.input-icon-container {
+  background: #ffffff;
+  border: 1px solid #c3cad9;
+  border-radius: 8px;
+  width: 360px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 767px) {
+  .input-icon-container {
+    width: 300px;
+  }
+}
+.user-icon {
+  border-right: 2px solid #c3cad9;
+  height: 45px;
+  font-size: 20px;
+  margin: 10px;
+  width: 35px;
+  padding-right: 10px;
+}
+.login-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+.login-btn {
+  background: #0284c7;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 360px;
+  padding: 10px;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+}
+@media screen and (max-width: 767px) {
+  .login-btn {
+    width: 300px;
+  }
+}
+.error-msg {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ef4444;
+}

@@ -1,0 +1,123 @@
+.detailed-page-container {
+  background-color: #e5e5e5;
+  padding: 60px;
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+@media screen and (max-width: 767px) {
+  .detailed-page-container {
+    padding: 15px;
+  }
+}
+.card-container {
+  background: #ffffff;
+  box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08),
+    0px 1px 2px rgba(96, 97, 112, 0.16);
+  border-radius: 16px;
+  padding: 80px;
+  padding-bottom: 15px;
+  padding-top: 40px;
+  margin: 10px;
+}
+@media screen and (max-width: 767px) {
+  .card-container {
+    padding: 30px;
+  }
+}
+.book-cover-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .book-cover-container {
+    flex-direction: column;
+  }
+}
+.book-detailed-view-cover-img {
+  width: 235px;
+  height: 274px;
+  left: 427px;
+  top: 217px;
+  border-radius: 14.1309px;
+}
+.book-detailed-view-item-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 30px;
+  color: #334155;
+}
+.book-detailed-view-author {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 10px;
+  color: #475569;
+}
+@media screen and (max-width: 767px) {
+  .book-detailed-view-item-title {
+    font-size: 28px;
+    line-height: 20px;
+  }
+  .book-detailed-view-author {
+    font-size: 20px;
+    line-height: 5px;
+  }
+}
+.detailed-view-rating {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 10px;
+  color: #475569;
+}
+.detailed-view-status {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 10px;
+  color: #475569;
+}
+@media screen and (max-width: 767px) {
+  .detailed-view-rating {
+    line-height: 0px;
+  }
+  .detailed-view-status {
+    line-height: 0px;
+  }
+}
+
+.detailed-view-status-name {
+  color: #0284c7;
+}
+.hr-line {
+  height: 2px;
+  background-color: rgb(165, 164, 164);
+}
+.about-author-heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #334155;
+}
+.about-para {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #475569;
+}
+@media screen and (max-width: 767px) {
+  .about-para {
+    font-size: 18px;
+  }
+}

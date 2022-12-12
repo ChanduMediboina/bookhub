@@ -1,0 +1,60 @@
+.social-media-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px;
+  padding-bottom: 10px;
+  background-color: #e0e0e0;
+}
+@media screen and (max-width: 767px) {
+  .social-media-icons {
+    flex-direction: column;
+  }
+}
+.adjust-icons-to-side {
+  display: flex;
+  justify-content: space-evenly;
+}
+.google-icon {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 21px;
+  text-align: center;
+  color: #3d3c3c;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.google-icon:hover {
+  color: #f51f4d;
+}
+.address {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  color: #3d3c3c;
+  line-height: 0;
+  padding-bottom: 10px;
+}
+.used-technologies {
+  font-family: 'Roboto';
+  font-size: 28px;
+  font-weight: 500;
+  color: #3d3c3c;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  .used-technologies {
+    line-height: 20px;
+  }
+}
+.languages {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  color: #3d3c3c;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
