@@ -1,9 +1,5 @@
 .header-page-container {
-  background-image: linear-gradient(
-    to left,
-    rgba(154, 253, 223, 0.699),
-    #e3fffb
-  );
+  background-color: #fff;
   border: 1px solid #e4e7eb;
   display: flex;
   justify-content: space-between;
@@ -45,7 +41,8 @@
 
   .invisible-drop-down {
     display: block;
-    padding-left: 20px;
+
+    padding: 20px;
   }
   .drop-down-container {
     display: none;

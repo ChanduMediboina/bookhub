@@ -36,12 +36,23 @@ class LoginPage extends Component {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
+
+    // const url = 'https://sekharslogin.onrender.com/login'
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(userDetails),
+    // }
+
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok === true) {
       this.successfulLogin(data.jwt_token)
     } else {
       this.setState({errorMsg: data.error_msg})
+      //   this.setState({errorMsg: data.user_msg})
     }
   }
 

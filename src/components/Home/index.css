@@ -1,8 +1,7 @@
 .home-page-container {
   min-height: 100vh;
   padding: 30px;
-  background-image: url('https://res.cloudinary.com/dxnk6ejnn/image/upload/v1670680632/book-image2_pirvdo.jpg');
-  background-size: cover;
+  background-color: #e5e5e5;
 }
 @media screen and (max-width: 767px) {
   .home-page-container {
@@ -58,7 +57,7 @@
   }
 }
 .top-rated-books-container:hover {
-  box-shadow: 0px 0px 7px 4px rgb(139, 139, 245);
+  box-shadow: 0px 0px 16px 0px rgb(193, 193, 194);
 }
 .top-rating-find-btn-container {
   display: flex;
@@ -74,7 +73,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  color: #34f36d;
+  color: #000;
 }
 @media screen and (max-width: 767px) {
   .top-rating-find-btn-container {
@@ -87,19 +86,41 @@
     font-size: 20px;
   }
 }
-.find-more-btn {
+.find-more-btn-inside-card {
   padding: 10px;
   width: 104px;
   height: 36px;
-  background: #0284c7;
   border-radius: 4px;
   order: 0;
   flex-grow: 0;
   color: #fff;
   border: none;
   cursor: pointer;
+  background: #0284c7;
 }
 
+.find-more-btn-outside-card {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .find-more-btn-inside-card {
+    display: none;
+  }
+  .find-more-btn-outside-card {
+    padding: 10px;
+    width: 104px;
+    height: 36px;
+    background: #0284c7;
+    border-radius: 4px;
+    order: 0;
+    flex-grow: 0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: 25px;
+  }
+}
 .slick-prev:before,
 .slick-next:before {
   color: #000;

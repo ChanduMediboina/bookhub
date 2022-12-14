@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 .google-icon:hover {
-  color: #f51f4d;
+  color: #0284c7;
 }
 .address {
   font-family: 'Roboto';
@@ -36,7 +36,11 @@
   color: #3d3c3c;
   line-height: 0;
   padding-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  position: absolute;
 }
+
 .used-technologies {
   font-family: 'Roboto';
   font-size: 28px;
@@ -57,4 +61,23 @@
   color: #3d3c3c;
   line-height: 30px;
   padding-bottom: 10px;
+}
+.mail-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.call-container {
+  display: flex;
+  align-items: center;
+}
+.phone-num {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  color: #3d3c3c;
+  line-height: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }

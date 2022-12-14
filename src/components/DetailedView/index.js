@@ -2,6 +2,8 @@ import {Component} from 'react'
 
 import Cookies from 'js-cookie'
 
+import ReactStars from 'react-rating-stars-component'
+
 import {BsFillStarFill} from 'react-icons/bs'
 
 import Loader from 'react-loader-spinner'
@@ -75,6 +77,7 @@ class BookDetailedView extends Component {
       readStatus,
       title,
     } = detailedViewObj
+
     return (
       <>
         <Header />
@@ -99,6 +102,15 @@ class BookDetailedView extends Component {
                     {readStatus}
                   </span>
                 </p>
+                <div className="your-rating-container">
+                  <p className="detailed-view-status">Your Rating:</p>
+                  <ReactStars
+                    activeColor="#fcf732"
+                    size={30}
+                    isHalf="true"
+                    count={5}
+                  />
+                </div>
               </div>
             </div>
             <hr className="hr-line" />

@@ -41,7 +41,7 @@ class Bookshelves extends Component {
     const {bookStatus, userSearch} = this.state
     const jwtToken = Cookies.get('jwt_token')
 
-    const url = `https://apis.ccbp.in/book-hub/books?shelf=${bookStatus}&search=${userSearch}`
+    const url = `https://apis.ccbp.in/book-hub/books?shelf=${bookStatus}&search=${userSearch}&limit=${10}`
 
     const options = {
       method: 'GET',
@@ -51,6 +51,7 @@ class Bookshelves extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
+
     if (response.ok === true) {
       const updatedToCamelCase = data.books.map(each => ({
         coverPic: each.cover_pic,
@@ -60,6 +61,7 @@ class Bookshelves extends Component {
         readStatus: each.read_status,
         title: each.title,
       }))
+
       this.setState({
         allBooksList: [...updatedToCamelCase],
         apiStatus: httpStatus.success,
@@ -96,6 +98,7 @@ class Bookshelves extends Component {
 
   apiCallSuccess = () => {
     const {userSearch, allBooksList} = this.state
+
     return (
       <>
         {allBooksList.length > 0 ? (

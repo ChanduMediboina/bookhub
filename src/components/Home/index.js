@@ -106,13 +106,11 @@ class Home extends Component {
     }
 
     return (
-      <ul>
-        <Slider {...settings}>
-          {topRatedList.map(each => (
-            <TopRatedBooks key={each.id} getTopRatedBooks={each} />
-          ))}
-        </Slider>
-      </ul>
+      <Slider {...settings}>
+        {topRatedList.map(each => (
+          <TopRatedBooks key={each.id} getTopRatedBooks={each} />
+        ))}
+      </Slider>
     )
   }
 
@@ -180,11 +178,16 @@ class Home extends Component {
             enjoyed in the past, and we will give you surprisingly insightful
             recommendations.
           </p>
+          <Link to="/shelf" className="link">
+            <button type="button" className="find-more-btn-outside-card">
+              Find Books
+            </button>
+          </Link>
           <div className="top-rated-books-container">
             <div className="top-rating-find-btn-container">
               <h1 className="top-rated-heading">Top Rated Books</h1>
               <Link to="/shelf" className="link">
-                <button type="button" className="find-more-btn">
+                <button type="button" className="find-more-btn-inside-card">
                   Find Books
                 </button>
               </Link>

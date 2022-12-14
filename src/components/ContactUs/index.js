@@ -1,4 +1,6 @@
-import {GrGoogle, GrYoutube, GrInstagram, GrTwitter} from 'react-icons/gr'
+import {GrYoutube, GrInstagram} from 'react-icons/gr'
+import {AiOutlineLinkedin} from 'react-icons/ai'
+import {FiMail, FiPhone} from 'react-icons/fi'
 
 import './index.css'
 
@@ -6,14 +8,25 @@ const ContactUs = () => (
   <div className="social-media-icons">
     <div>
       <div className="adjust-icons-to-side">
-        <GrGoogle className="google-icon" />
-        <GrTwitter className="google-icon" />
-        <GrInstagram className="google-icon" />
-        <GrYoutube className="google-icon" />
+        <a href="https://www.linkedin.com/in/chandu9550/">
+          <AiOutlineLinkedin className="google-icon" />
+        </a>
+        <a href="https://www.instagram.com/natural_star_chandu81/">
+          <GrInstagram className="google-icon" />
+        </a>
+        <a href="https://www.youtube.com/">
+          <GrYoutube className="google-icon" />
+        </a>
       </div>
       <p className="used-technologies">Contact us</p>
-      <p className="address">chandumediboina95@gmail.com</p>
-      <p className="address"> +91 9550980192</p>
+      <div className="mail-container">
+        <FiMail />
+        <p className="address">chandumediboina95@gmail.com</p>
+      </div>
+      <div className="call-container">
+        <FiPhone />
+        <p className="phone-num"> +91 9550980192</p>
+      </div>
     </div>
     <div>
       <h1 className="used-technologies">Used Technologies</h1>
