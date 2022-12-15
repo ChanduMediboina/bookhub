@@ -1,12 +1,18 @@
 import {Component} from 'react'
 
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
 import {FaUser} from 'react-icons/fa'
 
 import {RiLockPasswordFill} from 'react-icons/ri'
+
+import {signInWithEmailAndPassword} from 'firebase/auth'
+
+import auth from '../Firebase'
+
+import SignInForm from '../SignUp'
 
 import './index.css'
 
@@ -22,7 +28,11 @@ class LoginPage extends Component {
   }
 
   successfulLogin = jwtToken => {
-    Cookies.set('jwt_token', jwtToken, {expires: 2})
+    Cookies.set(
+      'jwt_token',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MjMwNjU1MzJ9.D13s5wN3Oh59aa_qtXMo3Ec4wojOx0EZh8Xr5C5sRkU',
+      {expires: 2},
+    )
     const {history} = this.props
     history.replace('/')
   }
@@ -31,11 +41,19 @@ class LoginPage extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const url = 'https://apis.ccbp.in/login'
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
-    }
+    signInWithEmailAndPassword(auth, username, password)
+      .then(() => {
+        this.successfulLogin()
+      })
+      .catch(error => {
+        alert('Invalid Email or Password')
+      })
+
+    // const url = 'https://apis.ccbp.in/login'
+    // const options = {
+    //   method: 'POST',
+    //   body: JSON.stringify(userDetails),
+    // }
 
     // const url = 'https://sekharslogin.onrender.com/login'
     // const options = {
@@ -46,14 +64,15 @@ class LoginPage extends Component {
     //   body: JSON.stringify(userDetails),
     // }
 
-    const response = await fetch(url, options)
-    const data = await response.json()
-    if (response.ok === true) {
-      this.successfulLogin(data.jwt_token)
-    } else {
-      this.setState({errorMsg: data.error_msg})
-      //   this.setState({errorMsg: data.user_msg})
-    }
+    // const response = await fetch(url, options)
+    // const data = await response.json()
+
+    // if (response.ok === true) {
+    //   this.successfulLogin(data.jwt_token)
+    // } else {
+    //   this.setState({errorMsg: data.error_msg})
+    //   //   this.setState({errorMsg: data.user_msg})
+    // }
   }
 
   render() {
@@ -62,6 +81,7 @@ class LoginPage extends Component {
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
+
     return (
       <div className="login-page-container">
         <img
@@ -88,7 +108,7 @@ class LoginPage extends Component {
                   onChange={this.getUsername}
                   id="username"
                   className="login-input"
-                  placeholder="username"
+                  placeholder="Email"
                 />
               </div>
             </div>
@@ -111,6 +131,11 @@ class LoginPage extends Component {
             <button type="submit" className="login-btn">
               Login
             </button>
+            <Link to="/sign-up">
+              <button type="button" className="sign-up-btn">
+                SignUp
+              </button>
+            </Link>
             <p className="error-msg">{errorMsg}</p>
           </form>
         </div>

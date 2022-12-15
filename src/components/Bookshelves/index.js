@@ -51,7 +51,7 @@ class Bookshelves extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
-
+    console.log(jwtToken)
     if (response.ok === true) {
       const updatedToCamelCase = data.books.map(each => ({
         coverPic: each.cover_pic,
@@ -102,11 +102,11 @@ class Bookshelves extends Component {
     return (
       <>
         {allBooksList.length > 0 ? (
-          <ul className="ul-container">
+          <div className="ul-container">
             {allBooksList.map(each => (
               <BooksItem key={each.id} getItem={each} />
             ))}
-          </ul>
+          </div>
         ) : (
           <div className="no-search-container">
             <img

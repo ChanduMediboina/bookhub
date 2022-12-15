@@ -15,11 +15,9 @@ const BookItem = props => {
         <div className="book-content-container">
           <h1 className="book-item-title">{title}</h1>
           <p className="book-author">{authorName}</p>
-
           <p className="rating">
             Avg Rating {<BsFillStarFill className="star-icon" />} {rating}
           </p>
-
           <p className="status">
             Status: <span className="status-name">{readStatus}</span>
           </p>

@@ -8,13 +8,16 @@ const ContactUs = () => (
   <div className="social-media-icons">
     <div>
       <div className="adjust-icons-to-side">
-        <a href="https://www.linkedin.com/in/chandu9550/">
+        <a className="anchor" href="https://www.linkedin.com/in/chandu9550/">
           <AiOutlineLinkedin className="google-icon" />
         </a>
-        <a href="https://www.instagram.com/natural_star_chandu81/">
+        <a
+          className="anchor"
+          href="https://www.instagram.com/natural_star_chandu81/"
+        >
           <GrInstagram className="google-icon" />
         </a>
-        <a href="https://www.youtube.com/">
+        <a className="anchor" href="https://www.youtube.com/">
           <GrYoutube className="google-icon" />
         </a>
       </div>

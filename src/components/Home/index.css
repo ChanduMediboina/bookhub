@@ -8,6 +8,7 @@
     padding: 10px;
   }
 }
+
 .home-heading {
   font-family: 'Roboto';
   font-style: normal;
@@ -21,7 +22,7 @@
 }
 
 .home-para {
-  font-family: 'Inter';
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
@@ -29,6 +30,11 @@
   width: 80%;
   color: #0b0c0a;
   padding-left: 25px;
+  transition: font-size, 1s;
+}
+.home-para:hover {
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
 }
 @media screen and (max-width: 767px) {
   .home-heading {
@@ -47,8 +53,7 @@
   border-radius: 16px;
   margin: 20px;
   margin-top: 50px;
-  padding: 30px;
-  padding-top: 10px;
+  padding: 20px 35px;
 }
 @media screen and (max-width: 767px) {
   .top-rated-books-container {
@@ -69,7 +74,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
-  line-height: 60px;
+  line-height: 20px;
   display: flex;
   align-items: center;
   text-align: center;

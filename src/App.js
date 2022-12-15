@@ -8,6 +8,8 @@ import NotFound from './components/NotFound'
 
 import LoginPage from './components/LoginPage'
 
+import SignInForm from './components/SignUp'
+
 import BookDetailedView from './components/DetailedView'
 
 import ProtectedRoute from './components/ProtectedRoute'
@@ -22,6 +24,7 @@ const App = () => (
         <ProtectedRoute exact path="/" component={Home} />
         <ProtectedRoute exact path="/shelf" component={Bookshelves} />
         <ProtectedRoute exact path="/books/:id" component={BookDetailedView} />
+        <Route exact path="/sign-up" component={SignInForm} />
         <Route path="/not-found" component={NotFound} />
         <Redirect to="/not-found" />
       </Switch>

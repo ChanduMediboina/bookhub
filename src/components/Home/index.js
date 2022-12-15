@@ -29,18 +29,59 @@ const httpStatus = {
   failure: 'FAILURE',
 }
 
+const settings = {
+  infinite: true,
+  speed: 10,
+  dots: false,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1500,
+  responsive: [
+    {
+      breakpoint: 1124,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 650,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
+
 class Home extends Component {
-  state = {topRatedList: [], apiStatus: httpStatus.initial}
+  state = {
+    topRatedList: [],
+    apiStatus: httpStatus.initial,
+    currentlyReadingList: [],
+  }
 
   componentDidMount() {
     this.getTopRated()
+    this.getCurrentlyReadingBooksData()
   }
 
   // API fetch
   getTopRated = async () => {
+    const jwtToken = Cookies.get('jwt_token')
     this.setState({apiStatus: httpStatus.isLoading})
 
-    const jwtToken = Cookies.get('jwt_token')
     const url = 'https://apis.ccbp.in/book-hub/top-rated-books'
     const options = {
       method: 'GET',
@@ -50,6 +91,8 @@ class Home extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
+    console.log(response.ok)
+    console.log(jwtToken)
     if (response.ok === true) {
       const updatedToCamelCase = data.books.map(each => ({
         authorName: each.author_name,
@@ -66,48 +109,46 @@ class Home extends Component {
     }
   }
 
+  getCurrentlyReadingBooksData = async () => {
+    const jwtToken2 = Cookies.get('jwt_token')
+    const option = {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${jwtToken2}`,
+      },
+    }
+    const currentBookUrl =
+      'https://apis.ccbp.in/book-hub/books?shelf=CURRENTLY_READING'
+    const bookResponse = await fetch(currentBookUrl, option)
+    const bookData = await bookResponse.json()
+    if (bookResponse.ok === true) {
+      const changingToCamelCase = bookData.books.map(each => ({
+        authorName: each.author_name,
+        coverPic: each.cover_pic,
+        id: each.id,
+        title: each.title,
+      }))
+      this.setState({currentlyReadingList: [...changingToCamelCase]})
+    }
+  }
+
   // successful api call
   apiCallSuccess = () => {
     const {topRatedList} = this.state
-
-    const settings = {
-      infinite: true,
-      speed: 10,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 1500,
-      responsive: [
-        {
-          breakpoint: 1124,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true,
-          },
-        },
-        {
-          breakpoint: 650,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            initialSlide: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    }
-
     return (
       <Slider {...settings}>
         {topRatedList.map(each => (
+          <TopRatedBooks key={each.id} getTopRatedBooks={each} />
+        ))}
+      </Slider>
+    )
+  }
+
+  currentReadingBooksCarousel = () => {
+    const {currentlyReadingList} = this.state
+    return (
+      <Slider {...settings}>
+        {currentlyReadingList.map(each => (
           <TopRatedBooks key={each.id} getTopRatedBooks={each} />
         ))}
       </Slider>
@@ -130,6 +171,7 @@ class Home extends Component {
         src="https://res.cloudinary.com/dxnk6ejnn/image/upload/v1670761985/Group_7522_fbxkh7.png"
       />
       <p className="failure-heading">Something went wrong, Please try again</p>
+      <p className="failure-heading">Once Refresh your page</p>
       <button
         onClick={() => this.getTopRated()}
         type="button"
@@ -160,6 +202,7 @@ class Home extends Component {
     return (
       <>
         <Header />
+
         <div className="home-page-container">
           <h1 className="home-heading">
             <Typewriter
@@ -173,6 +216,7 @@ class Home extends Component {
               }}
             />
           </h1>
+
           <p className="home-para">
             You are in the right place. Tell us what titles or genres you have
             enjoyed in the past, and we will give you surprisingly insightful
@@ -193,6 +237,18 @@ class Home extends Component {
               </Link>
             </div>
             {this.apiFetchResult()}
+          </div>
+
+          <div className="top-rated-books-container">
+            <div className="top-rating-find-btn-container">
+              <h1 className="top-rated-heading">Your Favorite Books</h1>
+              <Link to="/shelf" className="link">
+                <button type="button" className="find-more-btn-inside-card">
+                  Find Books
+                </button>
+              </Link>
+            </div>
+            {this.currentReadingBooksCarousel()}
           </div>
         </div>
         <ContactUs />

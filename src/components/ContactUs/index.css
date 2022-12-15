@@ -11,6 +11,24 @@
     flex-direction: column;
   }
 }
+.anchor {
+  width: 40px;
+  background-color: #fff;
+  border-radius: 60px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: width 0.4s;
+}
+
+.anchor:hover {
+  width: 120px;
+  background-color: aliceblue;
+  color: #000;
+}
+
 .adjust-icons-to-side {
   display: flex;
   justify-content: space-evenly;
@@ -23,7 +41,7 @@
   line-height: 21px;
   text-align: center;
   color: #3d3c3c;
-  margin-right: 25px;
+  margin: 5px;
   cursor: pointer;
 }
 .google-icon:hover {

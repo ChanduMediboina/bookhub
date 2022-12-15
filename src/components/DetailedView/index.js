@@ -82,8 +82,8 @@ class BookDetailedView extends Component {
       <>
         <Header />
         <div className="detailed-page-container">
-          <div className="card-container">
-            <div className="book-cover-container">
+          <div className="detailed-view-card-container">
+            <div className="book-detailed-cover-container">
               <img
                 className="book-detailed-view-cover-img"
                 alt={title}
@@ -104,12 +104,7 @@ class BookDetailedView extends Component {
                 </p>
                 <div className="your-rating-container">
                   <p className="detailed-view-status">Your Rating:</p>
-                  <ReactStars
-                    activeColor="#fcf732"
-                    size={30}
-                    isHalf="true"
-                    count={5}
-                  />
+                  <ReactStars size={30} isHalf="true" count={5} />
                 </div>
               </div>
             </div>
