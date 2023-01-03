@@ -9,16 +9,28 @@ const ContactUs = () => (
     <div>
       <div className="adjust-icons-to-side">
         <a className="anchor" href="https://www.linkedin.com/in/chandu9550/">
-          <AiOutlineLinkedin className="google-icon" />
+          <img
+            src="https://res.cloudinary.com/dxnk6ejnn/image/upload/v1672723725/blue-color-white-background-linkedin-design-logo-sign-symbol-free-vector_gbkis6.webp"
+            alt="youtube"
+            className="google-icon"
+          />
         </a>
         <a
           className="anchor"
-          href="https://www.instagram.com/natural_star_chandu81/"
+          href="https://www.instagram.com/innocent_boy___chandu/"
         >
-          <GrInstagram className="google-icon" />
+          <img
+            src="https://res.cloudinary.com/dxnk6ejnn/image/upload/v1672723714/3Bg-2ZsT_400x400_kycnvd.jpg"
+            alt="instagram"
+            className="google-icon"
+          />
         </a>
         <a className="anchor" href="https://www.youtube.com/">
-          <GrYoutube className="google-icon" />
+          <img
+            src="https://res.cloudinary.com/dxnk6ejnn/image/upload/v1672723701/red-youtube-logo-social-media-logo_197792-1803_kti1gc.webp"
+            alt="linkedin"
+            className="google-icon"
+          />
         </a>
       </div>
       <p className="used-technologies">Contact us</p>

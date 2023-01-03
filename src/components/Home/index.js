@@ -202,7 +202,6 @@ class Home extends Component {
     return (
       <>
         <Header />
-
         <div className="home-page-container">
           <h1 className="home-heading">
             <Typewriter
